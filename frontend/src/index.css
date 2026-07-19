@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #0a0a0f;
+    --bg-secondary: #111118;
+    --bg-card: rgba(255, 255, 255, 0.03);
+    --border-color: rgba(255, 255, 255, 0.08);
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --text-muted: #475569;
+    --accent-primary: #6366f1;
+    --accent-secondary: #d946ef;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-[#0a0a0f] text-slate-100 font-sans antialiased;
+    min-height: 100vh;
+    background-image: 
+      radial-gradient(ellipse at 20% 50%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, rgba(217, 70, 239, 0.06) 0%, transparent 50%);
+    background-attachment: fixed;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-700 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-600;
+  }
+}
+
+@layer components {
+  /* Glassmorphism */
+  .glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-strong {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent;
+  }
+
+  .gradient-text-blue {
+    @apply bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent;
+  }
+
+  /* Gradient border */
+  .gradient-border {
+    position: relative;
+    background: linear-gradient(#0a0a0f, #0a0a0f) padding-box,
+                linear-gradient(135deg, #6366f1, #d946ef) border-box;
+    border: 1px solid transparent;
+  }
+
+  /* Primary button */
+  .btn-primary {
+    @apply bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 
+           text-white font-semibold py-2.5 px-5 rounded-xl 
+           transition-all duration-200 ease-in-out
+           shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/40
+           active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply glass text-slate-200 hover:bg-white/10 font-medium py-2.5 px-5 rounded-xl
+           transition-all duration-200 active:scale-95 disabled:opacity-50;
+  }
+
+  .btn-danger {
+    @apply bg-red-600/80 hover:bg-red-500 text-white font-medium py-2.5 px-5 rounded-xl
+           transition-all duration-200 active:scale-95;
+  }
+
+  /* Card */
+  .card {
+    @apply glass rounded-2xl p-6;
+  }
+
+  /* Input */
+  .input {
+    @apply w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 
+           text-slate-100 placeholder-slate-500
+           focus:outline-none focus:border-indigo-500/60 focus:ring-1 focus:ring-indigo-500/30
+           transition-all duration-200;
+  }
+
+  /* Sidebar link */
+  .nav-link {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-400 
+           hover:text-slate-100 hover:bg-white/5
+           transition-all duration-200 cursor-pointer font-medium text-sm;
+  }
+
+  .nav-link-active {
+    @apply nav-link text-white bg-gradient-to-r from-indigo-600/40 to-purple-600/20 
+           border border-indigo-500/30 shadow-lg shadow-indigo-500/10;
+  }
+
+  /* Badge */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  /* Chat bubble */
+  .chat-user {
+    @apply bg-gradient-to-br from-indigo-600 to-purple-600 text-white rounded-2xl rounded-tr-sm px-4 py-3;
+  }
+
+  .chat-ai {
+    @apply glass text-slate-100 rounded-2xl rounded-tl-sm px-4 py-3;
+  }
+
+  /* Stat card */
+  .stat-card {
+    @apply card flex items-center gap-4 hover:border-indigo-500/30 
+           transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/10;
+  }
+
+  /* Page transition wrapper */
+  .page-enter {
+    @apply animate-fade-in;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .scrollbar-none {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+}

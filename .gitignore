@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+backend/chroma_db_data/
+backend/uploads/
+backend/scholarmind.db
+
+# Node.js
+frontend/node_modules/
+frontend/dist/
+
+# Environments
+.env
+backend/.env
+frontend/.env
