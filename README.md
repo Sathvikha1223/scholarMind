@@ -1,6 +1,6 @@
 # ScholarMind
 
-ScholarMind is a 
+ScholarMind is an AI-powered Personal Knowledge Assistant that enables users to upload their own study materials—including PDFs, DOCX, PPTX, text files, Markdown, and source code—and interact with them through an intelligent chatbot. Built using React, FastAPI, PostgreSQL, ChromaDB, and Retrieval-Augmented Generation (RAG), ScholarMind extracts document content, generates embeddings, and uses an LLM to answer questions based only on the user's uploaded documents. It also generates summaries, one-page revision sheets, bullet-point notes, flashcards, quizzes, mind maps, and personalized revision plans.
 
 Frontend:
 Built using React and TypeScript, it's designed to feel responsive and interactive UI. It uses Tailwind CSS for styling, supports dark mode, and has smooth slide/fade animations. 
